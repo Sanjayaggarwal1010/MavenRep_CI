@@ -18,7 +18,7 @@ public class AppTest
 	public static String driverPath = "C:\\Users\\megha\\Desktop\\SeleniumJarFiles\\chromedriver_win32\\";
 	 public static WebDriver driver;
 	 
-	 public void testRegister() throws Exception {
+	 public void testSelenium() throws Exception {
 			System.out.println("launching chrome browser");
 			System.setProperty("webdriver.chrome.driver", driverPath+"chromedriver.exe");
 			driver = new ChromeDriver();
