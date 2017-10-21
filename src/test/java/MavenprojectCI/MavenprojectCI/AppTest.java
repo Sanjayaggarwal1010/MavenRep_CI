@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
@@ -26,20 +27,23 @@ public class AppTest
 	 
 	 public void testSelenium() throws Exception {
 			System.out.println("launching chrome browser");
+			
 			System.setProperty("webdriver.chrome.driver", driverPath+"chromedriver.exe");
 			driver = new ChromeDriver();
+			POMclass POMobject = new POMclass(driver);
+			PageFactory.initElements(driver ,POMobject);
 			driver.manage().window().maximize();
 			String Url = "https://www.americanfunds.com/advisor";
 			driver.navigate().to(Url);
 			System.out.println(driver.getPageSource());
 			System.out.println("Perform global search");
-			driver.findElement(By.id("q")).sendKeys("fund");
-			driver.findElement(By.xpath("/html/body/div[10]/div/div/div/header/div[1]/div[2]/div[1]/div/ul/li[3]/div/div/div/form/input[2]")).click();
+			POMobject.Searchtxt.sendKeys("fund");
+			POMobject.Loginbtn.click();
 			System.out.println("Results are displayed");
 			System.out.println("Login Method started");
-			driver.findElement(By.xpath("/html/body/div[6]/div/div/div/div/div/ul[2]/li[5]/a/span[1]")).click();
-			driver.findElement(By.xpath("/html/body/div[6]/div/div/div/div/div/ul[2]/li[5]/ul/li[1]/div[2]/a")).click();
-		    System.out.println("Login Method Ended");
+			POMobject.LoginReg.click();
+			POMobject.LoginLink.click();
+			System.out.println("Login Method Ended");
             driver.navigate().to("https://www.thecapitalgroup.com/us/about.html");
              driver.findElement(By.linkText("Our Locations")).click();
              List<WebElement> Locations = driver.findElements(By.xpath("//div[@class='row-fluid office-locations']/div/ul/li"));
