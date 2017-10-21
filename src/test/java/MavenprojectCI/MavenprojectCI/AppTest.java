@@ -1,5 +1,6 @@
 package MavenprojectCI.MavenprojectCI;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -25,6 +26,10 @@ public class AppTest
 			String Url = "https://www.americanfunds.com/advisor";
 			driver.navigate().to(Url);
 			System.out.println(driver.getPageSource());
+			System.out.println("Perform global search");
+			driver.findElement(By.id("q")).sendKeys("fund");
+			driver.findElement(By.xpath("/html/body/div[10]/div/div/div/header/div[1]/div[2]/div[1]/div/ul/li[3]/div/div/div/form/input[2]")).click();
+			System.out.println("Results are displayed");
 			driver.quit();
 			System.out.println("chrome browser Closed");
 		}
