@@ -77,5 +77,6 @@ public class AppTest
 			driver.quit();
 			System.out.println("chrome browser Closed");
 			System.out.println("End of Method");
+			System.out.println("End of Method- Just Now");
 		}
 }
