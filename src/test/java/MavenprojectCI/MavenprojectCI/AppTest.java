@@ -26,5 +26,6 @@ public class AppTest
 			driver.navigate().to(Url);
 			System.out.println(driver.getPageSource());
 			driver.quit();
+			System.out.println("chrome browser Closed");
 		}
 }
