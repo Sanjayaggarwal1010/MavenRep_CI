@@ -49,6 +49,7 @@ public class AppTest
 			System.out.println("End of Method- Just -22/10/2017");
 			System.out.println("End of Method- Just -26/10/2017");
 			System.out.println("End of Method- Just -27/10/2017");
+		        System.out.println("End of Method- Just -29/10/2017");    
 		}
 	 @Test
 	 public void seleniumtest2()
