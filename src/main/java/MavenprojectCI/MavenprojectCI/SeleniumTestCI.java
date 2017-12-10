@@ -16,5 +16,15 @@ public class SeleniumTestCI {
 		driver.navigate().to(Url);
 		System.out.println(driver.getPageSource());
 		driver.quit();
+		/* cd C:\Users\megha\Sanjay\San_Test_CI
+                    cd C:\Users\megha\Sanjay\San_Test_CI\src\San_CI_Package
+                   javac HttpMethods.java
+                   java -cp C:\Users\megha\Sanjay\San_Test_CI\src San_CI_Package.HttpMethods
+                    pause
+                    cd C:\Users\megha\Desktop\SeleniumJarFiles\ST
+                   java -jar seleniumtestCI.jar
+                   pause
+                    exit*/
+
 	}
 }
